@@ -18,6 +18,7 @@ class Welcome extends CI_Controller {
 		// $data = $this->mahasiswa->_getMahasiswa();
 		$datatables = new Datatables(new CodeigniterAdapter());
 		$datatables->query("select id_mahasiswa,nim, nama,fak_jur,dosen_pa,kampus,jenis_kelamin,semester from mahasiswa");
-		print_r($datatables->generate());
+		// print_r($datatables->generate());
+		echo $datatables->generate();
 	}
 }
