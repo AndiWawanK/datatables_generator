@@ -69,7 +69,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <div id="container">
 	<h1>Welcome to CodeIgniter!</h1>
-	<table id="mydatatables">
+	<table border="0" class="display" id="example" width="100%">
 		<thead>
 			<tr>
 				<th>#ID</th>
@@ -82,9 +82,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<th>Semester</th>
 			</tr>
 		</thead>
+		<tbody>
+			<tr>
+				<td>Loading. . . .</td>
+			</tr>
+		</tbody>
 	</table>
 	
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+$(document).ready(function (){
 
+	$('#example').DataTable({
+		"serverSide": true,
+		"responsive": true,
+		"ajax": "<?= base_url("index.php/welcome/datatables") ?>"
+	});
+	console.log("helo")
+});
+</script>
 </body>
 </html>
